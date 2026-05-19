@@ -7,6 +7,29 @@
     <meta name="description" content="One wrong RSU decision can cost tens of thousands. Talk to an equity-specialized CPA in 30 minutes. Free consultation — no strings.">
     <meta name="robots" content="noindex, nofollow">
     <link rel="icon" href="https://cdn.prod.website-files.com/678ec8f3012c73b4c6e6f5fd/68f77e21b217193c1cf3f127_68656edf3860e601015daebefe47c065_fifteenth-logo.svg" type="image/svg+xml">
+
+    <!-- Meta Pixel -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '551639617241108');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=551639617241108&ev=PageView&noscript=1"/></noscript>
+    <!-- End Meta Pixel -->
+
+    <!-- Reddit Pixel -->
+    <script>
+    !function(w,d){if(!w.rdt){var p=w.rdt=function(){p.sendEvent?p.sendEvent.apply(p,arguments):p.callQueue.push(arguments)};p.callQueue=[];var t=d.createElement("script");t.src="https://www.redditstatic.com/ads/pixel.js?pixel_id=a2_ix5fx433uyfq",t.async=!0;var s=d.getElementsByTagName("script")[0];s.parentNode.insertBefore(t,s)}}(window,document);rdt('init','a2_ix5fx433uyfq');rdt('track', 'PageVisit');
+    </script>
+    <!-- DO NOT MODIFY UNLESS TO REPLACE A USER IDENTIFIER -->
+    <!-- End Reddit Pixel -->
     <style>
         /* ===== RESET & BASE ===== */
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -1025,10 +1048,20 @@
     <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
     <script>
         function openCalendly() {
+            if (typeof fbq !== 'undefined') fbq('track', 'AddToCart');
             const queryParams = new URLSearchParams(window.location.search).toString();
             const url = `https://calendly.com/d/cqn6-6bv-86k?hide_gdpr_banner=1${queryParams ? '&' + queryParams : ''}`;
             Calendly.initPopupWidget({ url });
         }
+
+        window.addEventListener('message', function(e) {
+            if (e.data && typeof e.data.event === 'string' && e.data.event.indexOf('calendly') === 0) {
+                if (e.data.event === 'calendly.event_scheduled') {
+                    if (typeof fbq !== 'undefined') fbq('track', 'Schedule');
+                    if (typeof rdt !== 'undefined') rdt('track', 'Lead');
+                }
+            }
+        });
 
         function toggleFaq(el) {
             const item = el.parentElement;
