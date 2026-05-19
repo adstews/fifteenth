@@ -1025,9 +1025,9 @@
     <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
     <script>
         function openCalendly() {
-            Calendly.initPopupWidget({
-                url: 'https://calendly.com/fifteenth/equity-planning'
-            });
+            const queryParams = new URLSearchParams(window.location.search).toString();
+            const url = `https://calendly.com/d/cqn6-6bv-86k?hide_gdpr_banner=1${queryParams ? '&' + queryParams : ''}`;
+            Calendly.initPopupWidget({ url });
         }
 
         function toggleFaq(el) {
