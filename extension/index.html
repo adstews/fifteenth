@@ -69,6 +69,7 @@
             --green: #56E415;
             --green-light: #B4FF87;
             --green-highlight: #83F34F;
+            --green-gradient: linear-gradient(270deg, var(--green-highlight), var(--green-light));
             --dark: #131313;
             --muted: #918F89;
             --border: #D8D6D1;
@@ -248,7 +249,10 @@
         }
 
         .hero .social-proof .check {
-            color: var(--green);
+            background: var(--green-gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
             font-size: 16px;
         }
 
@@ -360,7 +364,10 @@
         .mistake-number {
             font-size: 14px;
             font-weight: 500;
-            color: var(--green);
+            background: var(--green-gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
             margin-bottom: 16px;
             letter-spacing: 1.5px;
             text-transform: uppercase;
@@ -436,7 +443,10 @@
         .consult-card .number {
             font-size: 48px;
             font-weight: 400;
-            color: var(--green);
+            background: var(--green-gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
             line-height: 1;
             margin-bottom: 20px;
         }
@@ -472,7 +482,10 @@
             font-size: 42px;
             font-weight: 500;
             line-height: 1;
-            color: var(--green);
+            background: var(--green-gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
             margin-bottom: 4px;
         }
 
@@ -837,7 +850,7 @@
     <section class="consult-section">
         <div class="container">
             <div class="section-header">
-                <p class="section-label" style="color: var(--green);">How we get you across the line</p>
+                <p class="section-label" style="background: var(--green-gradient); -webkit-background-clip: text; background-clip: text; color: transparent;">How we get you across the line</p>
                 <h2>From "haven't started" to filed &mdash; in weeks, not days.</h2>
                 <p>A 30-minute scoping call with our team. We've onboarded thousands of extension filers, so we already know what your return likely needs &mdash; and how to keep yours from turning into another October fire drill.</p>
             </div>

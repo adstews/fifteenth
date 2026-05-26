@@ -44,6 +44,7 @@
             --green: #56E415;
             --green-light: #B4FF87;
             --green-highlight: #83F34F;
+            --green-gradient: linear-gradient(270deg, var(--green-highlight), var(--green-light));
             --dark: #131313;
             --muted: #918F89;
             --border: #D8D6D1;
@@ -255,7 +256,10 @@
         }
 
         .hero .social-proof .check {
-            color: var(--green);
+            background: var(--green-gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
             font-size: 16px;
         }
 
@@ -402,7 +406,10 @@
             font-size: 42px;
             font-weight: 500;
             line-height: 1;
-            color: var(--green);
+            background: var(--green-gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
             margin-bottom: 4px;
         }
 
@@ -470,7 +477,10 @@
         .tender-card .number {
             font-size: 48px;
             font-weight: 400;
-            color: var(--green);
+            background: var(--green-gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
             line-height: 1;
             margin-bottom: 20px;
         }
@@ -538,7 +548,10 @@
         }
 
         .compare-table thead th.fifteenth-col {
-            color: var(--green);
+            background: var(--green-gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
         }
 
         .compare-table tbody td {
@@ -744,7 +757,10 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--green);
+            background: var(--green-gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
             font-size: 18px;
         }
 
@@ -943,7 +959,7 @@
     <section class="tender-section">
         <div class="container">
             <div class="section-header">
-                <p class="section-label" style="color: var(--green);">Tender Offers</p>
+                <p class="section-label" style="background: var(--green-gradient); -webkit-background-clip: text; background-clip: text; color: transparent;">Tender Offers</p>
                 <h2>A tender offer opens. You have 30 days. Are you ready?</h2>
                 <p>Tender offers give pre-IPO employees a rare window to sell shares before a public listing. The window is short — typically 30 days — and the tax implications are significant. We make sure you're prepared before it opens.</p>
             </div>
